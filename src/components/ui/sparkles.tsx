@@ -56,7 +56,7 @@ export const SparklesCore = (props: ParticlesProps) => {
       {init && (
         <Particles
           id={id || "tsparticles"}
-          className={cn("h-full w-full")}
+          className={cn("h-screen w-full")}
           particlesLoaded={particlesLoaded}
           options={{
             background: {
