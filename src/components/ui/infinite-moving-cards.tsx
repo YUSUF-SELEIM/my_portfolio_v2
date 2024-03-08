@@ -90,9 +90,9 @@ export const InfiniteMovingCards = ({
             className="w-[150px] max-w-full relative rounded-2xl flex-shrink-0 px-8 py-6 md:w-[200px]"
             key={item.name}
           >
-              <span className="relative text-center z-20 text-xl leading-[1.6] text-gray-100 font-normal">
-                {item.quote}
-              </span>
+            <span className="relative text-center z-20 text-xl leading-[1.6] text-gray-100 font-normal">
+              {item.quote}
+            </span>
           </li>
         ))}
       </ul>
