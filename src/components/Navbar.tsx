@@ -9,9 +9,15 @@ export default function NavbarComponent() {
     };
     return (
         <>
-            <Navbar className="hidden md:flex px-2 py-3 sticky">
+            <Navbar className="hidden md:flex px-1 py-3 sticky">
                 <NavbarBrand>
-                    <p className="font-bold text-inherit">Yusuf Abdelfattah</p>
+                    <a
+                        href="https://flowcv.com/resume/vkvq6n0r9o"
+                        className="font-bold text-inherit"
+                        target="_blank"
+                    >
+                        Yusuf Abdelfattah
+                    </a>
                 </NavbarBrand>
                 <NavbarContent className="hidden sm:flex gap-8" justify="center">
                     <NavbarItem>
@@ -30,7 +36,7 @@ export default function NavbarComponent() {
                         </Link>
                     </NavbarItem>
                 </NavbarContent>
-                <NavbarContent justify="end">
+                <NavbarContent className="w-full flex justify-between" justify="end">
                     <NavbarItem>
                         <div className="flex space-x-2 items-center justify-between">
                             <span className="text-xs text-red-700">I Love This Website </span>

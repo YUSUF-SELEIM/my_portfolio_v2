@@ -1,6 +1,8 @@
 import { TypewriterEffectSmooth } from "./ui/type-writer-effect";
 import { FaGithub } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
+import { FaFileDownload } from 'react-icons/fa';
+
 
 export default function Contact() {
     return (
@@ -18,16 +20,30 @@ export default function Contact() {
                 <div className="flex flex-col space-y-3">
                     <p className="text-2xl"><div className="flex space-x-2 items-center">
                         <FaGithub />
-                        <a       className="hover:text-blue-500"
- href="https://github.com/YUSUF-SELEIM">Github</a>
+                        <a className="hover:text-blue-500"
+                            href="https://github.com/YUSUF-SELEIM">Github</a>
                     </div>
                     </p>
-                    <p className="text-2xl"><div className="flex space-x-2 items-center">
+                    <p className="text-2xl">
+                    <div className="flex space-x-2 items-center">
                         <FaLinkedin />
-                        <a       className="hover:text-blue-500"
- href="https://www.linkedin.com/in/yusuf-abdelfattah-shawky/">LinkedIn</a>
+                        <a className="hover:text-blue-500"
+                            href="https://www.linkedin.com/in/yusuf-abdelfattah-shawky/">LinkedIn</a>
                     </div>
                     </p>
+                    <p className="text-2xl">
+                    <div className="flex space-x-2 items-center">
+                        <FaFileDownload />
+                        <a
+                        href="https://flowcv.com/resume/vkvq6n0r9o"
+                        className="hover:text-blue-500"
+                        target="_blank"
+                    >
+                        Download CV
+                    </a>
+                    </div>
+                    </p>
+                   
                 </div>
             </div>
         </div>
