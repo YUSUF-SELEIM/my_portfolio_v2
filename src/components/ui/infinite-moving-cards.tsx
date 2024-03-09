@@ -12,8 +12,6 @@ export const InfiniteMovingCards = ({
 }: {
   items: {
     quote: string;
-    name: string;
-    title: string;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -88,7 +86,7 @@ export const InfiniteMovingCards = ({
         {items.map((item, idx) => (
           <li
             className="w-[150px] max-w-full relative rounded-2xl flex-shrink-0 px-8 py-6 md:w-[200px]"
-            key={item.name}
+            key={item.quote}
           >
             <span className="relative text-center z-20 text-xl leading-[1.6] text-gray-100 font-normal">
               {item.quote}
