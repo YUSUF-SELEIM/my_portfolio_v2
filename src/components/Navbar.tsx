@@ -36,7 +36,7 @@ export default function NavbarComponent() {
                         </Link>
                     </NavbarItem>
                 </NavbarContent>
-                <NavbarContent className="w-full flex justify-between" justify="end">
+                {/* <NavbarContent className="w-full flex justify-between" justify="end">
                     <NavbarItem>
                         <div className="flex space-x-2 items-center justify-between">
                             <span className="text-xs text-red-700">I Love This Website </span>
@@ -46,7 +46,7 @@ export default function NavbarComponent() {
                             <span className="text-xs text-red-700 font-extrabold">{count}</span>
                         </div>
                     </NavbarItem>
-                </NavbarContent>
+                </NavbarContent> */}
             </Navbar>
         </>
     );
