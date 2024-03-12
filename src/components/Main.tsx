@@ -30,7 +30,7 @@ export function Main() {
         className="absolute mb-24 flex items-center justify-center space-x-6 cursor-pointer"
       >
         <h1
-          className="md:text-8xl text-4xl font-bold cursor-pointer"
+          className="md:text-8xl text-4xl font-bold cursor-pointer text-white"
         >
           Yusuf Abdelfattah
         </h1>
