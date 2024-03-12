@@ -12,7 +12,7 @@ export default function Contact() {
                 className="text-3xl pb-0 my-4 px-4"
             ></TypewriterEffectSmooth>
             <div className="px-6 py-8 flex flex-col">
-                <h1 className="md:text-7xl text-4xl font-extrabold">WANT TO GET IN TOUCH?</h1>
+                <h1 className="md:text-7xl text-3xl font-extrabold text-white">WANT TO GET IN TOUCH?</h1>
                 <p className="md:text-5xl text-xl font-light text-gray-400"><a href="mailto:YUSUFABDElFATTAH207@GMAIL.COM">YUSUFABDElFATTAH207@GMAIL.COM</a></p>
             </div>
 
