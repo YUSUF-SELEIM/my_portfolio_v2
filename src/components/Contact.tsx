@@ -16,8 +16,8 @@ export default function Contact() {
                 <p className="md:text-5xl text-xs font-light text-gray-400"><a href="mailto:YUSUFABDElFATTAH207@GMAIL.COM">YUSUFABDElFATTAH207@GMAIL.COM</a></p>
             </div>
 
-            <div className="w-full h-full flex px-6 py-8 justify-end">
-                <div className="h-full flex flex-col space-y-3">
+            <div className="w-full h-full flex px-6 py-8 justify-end bg-black">
+                <div className="h-full flex flex-col space-y-3 bg-black">
                     <p className="text-2xl"><div className="flex space-x-2 items-center text-white">
                         <FaGithub />
                         <a className="hover:text-blue-500"
