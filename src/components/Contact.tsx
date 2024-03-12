@@ -6,7 +6,7 @@ import { FaFileDownload } from 'react-icons/fa';
 
 export default function Contact() {
     return (
-        <div className="h-screen md:pt-24 pt-5 bg-black " id="contact">
+        <div className="h-[80vh] md:pt-24 pt-5 bg-black " id="contact">
             <TypewriterEffectSmooth
                 words={[{ text: "Contact" }]}
                 className="text-3xl pb-0 my-4 px-4"
