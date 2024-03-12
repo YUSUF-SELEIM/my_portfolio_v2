@@ -10,7 +10,7 @@ import { TypewriterEffectSmooth } from "./ui/type-writer-effect";
 
 export default function Projects() {
   return (
-    <div className="md:pt-24 pt-5 px-5 h-full " id="projects" >
+    <div className="md:pt-24 pt-5 px-5 h-full bg-black" id="projects" >
       <TypewriterEffectSmooth
         words={[{ text: "Projects" }]}
         className="text-3xl pb-0 my-4 px-4"

@@ -52,7 +52,7 @@ const testimonials = [
 ];
 export default function About() {
   return (
-    <div className="h-screen md:pt-24 pt-5 flex flex-col space-y-5 " id="about">
+    <div className="h-screen md:pt-24 pt-5 flex flex-col space-y-5 bg-black" id="about">
       <div>
         <TypewriterEffectSmooth
           words={[{ text: "About" }]}
