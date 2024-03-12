@@ -9,7 +9,7 @@ export default function NavbarComponent() {
     };
     return (
         <>
-            <Navbar className="hidden md:flex px-1 py-3 sticky">
+            <Navbar className="hidden md:flex px-1 py-3 sticky text-white">
                 <NavbarBrand>
                     <a
                         href="https://flowcv.com/resume/vkvq6n0r9o"
