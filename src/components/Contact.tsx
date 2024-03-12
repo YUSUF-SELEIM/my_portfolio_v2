@@ -13,7 +13,7 @@ export default function Contact() {
             ></TypewriterEffectSmooth>
             <div className="px-6 py-8 flex flex-col">
                 <h1 className="md:text-7xl text-3xl font-extrabold text-white">WANT TO GET IN TOUCH?</h1>
-                <p className="md:text-5xl text-xl font-light text-gray-400"><a href="mailto:YUSUFABDElFATTAH207@GMAIL.COM">YUSUFABDElFATTAH207@GMAIL.COM</a></p>
+                <p className="md:text-5xl text-xs font-light text-gray-400"><a href="mailto:YUSUFABDElFATTAH207@GMAIL.COM">YUSUFABDElFATTAH207@GMAIL.COM</a></p>
             </div>
 
             <div className="w-full flex px-6 py-8 justify-end">
@@ -25,7 +25,7 @@ export default function Contact() {
                     </div>
                     </p>
                     <p className="text-2xl">
-                    <div className="flex space-x-2 items-center">
+                    <div className="flex space-x-2 items-center text-white">
                         <FaLinkedin />
                         <a className="hover:text-blue-500"
                             href="https://www.linkedin.com/in/yusuf-abdelfattah-shawky/">LinkedIn</a>
