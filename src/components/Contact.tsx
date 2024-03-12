@@ -16,9 +16,9 @@ export default function Contact() {
                 <p className="md:text-5xl text-xs font-light text-gray-400"><a href="mailto:YUSUFABDElFATTAH207@GMAIL.COM">YUSUFABDElFATTAH207@GMAIL.COM</a></p>
             </div>
 
-            <div className="w-full flex px-6 py-8 justify-end">
-                <div className="flex flex-col space-y-3">
-                    <p className="text-2xl"><div className="flex space-x-2 items-center">
+            <div className="w-full h-full flex px-6 py-8 justify-end">
+                <div className="h-full flex flex-col space-y-3">
+                    <p className="text-2xl"><div className="flex space-x-2 items-center text-white">
                         <FaGithub />
                         <a className="hover:text-blue-500"
                             href="https://github.com/YUSUF-SELEIM">Github</a>
@@ -32,7 +32,7 @@ export default function Contact() {
                     </div>
                     </p>
                     <p className="text-2xl">
-                    <div className="flex space-x-2 items-center">
+                    <div className="flex space-x-2 items-center text-white">
                         <FaFileDownload />
                         <a
                         href="https://flowcv.com/resume/vkvq6n0r9o"
