@@ -97,10 +97,10 @@ export default function About() {
           </div>
         </div>
       </div>
-  {/* <div className="hidden md:block">
-  <WavyBackground className="max-w-xl mx-auto ">
-      </WavyBackground>
-  </div> */}
+    <div className="hidden md:block">
+        <WavyBackground className="max-w-xl mx-auto ">
+        </WavyBackground>
+    </div>
     </div>
   )
 }
