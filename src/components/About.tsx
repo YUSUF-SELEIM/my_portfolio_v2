@@ -91,7 +91,7 @@ export default function About() {
               className=""
               items={testimonials}
               direction="right"
-              speed="slow"
+              speed="fast"
               pauseOnHover={false}
             />
           </div>
