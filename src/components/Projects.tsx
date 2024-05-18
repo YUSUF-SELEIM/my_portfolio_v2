@@ -4,6 +4,7 @@ import membersOnly from "/public/images/membersOnly.png";
 import messageApp from "/public/images/messageApp.png";
 import shoppingCart from "/public/images/shoppingCart.png";
 import resumeBuilder from "/public/images/resumeBuilder.png";
+import githubPortfolio from "/public/images/myGithubProfile.png";
 import dental from "/public/images/dental.png";
 import { TypewriterEffectSmooth } from "./ui/type-writer-effect";
 
@@ -67,6 +68,12 @@ export default function Projects() {
       technologies: "HTML, Tailwind CSS, Flowbite, JavaScript, PHP, MySQL",
       imageSrc: dental,
       link: "https://www.youtube.com/watch?v=L_kMThC4OmY",
+    },
+    {
+      title: "My Github Profile",
+      technologies: "🐝",
+      imageSrc: githubPortfolio,
+      link: "https://github.com/YUSUF-SELEIM",
     },
   ];
 
