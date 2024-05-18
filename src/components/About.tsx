@@ -6,6 +6,26 @@ import { WavyBackground } from "./ui/wavy-background";
 const testimonials = [
   {
     quote:
+      "Prisma",
+  },
+  {
+    quote:
+      "NextJS",
+  },
+  {
+    quote:
+      "PassportJS",
+  },
+  {
+    quote:
+      "Web Sockets",
+  },
+  {
+    quote:
+      "TypeScript",
+  },
+  {
+    quote:
       "ReactJS",
   },
   {
@@ -47,7 +67,10 @@ const testimonials = [
   {
     quote:
       "JavaScript",
-
+  },
+  {
+    quote:
+      "Vercel",
   },
 ];
 export default function About() {
@@ -74,10 +97,10 @@ export default function About() {
           </div>
         </div>
       </div>
-  <div className="hidden md:block h-[5vh]">
-  <WavyBackground className="max-w-xl mx-auto mt-10">
+  {/* <div className="hidden md:block">
+  <WavyBackground className="max-w-xl mx-auto ">
       </WavyBackground>
-  </div>
+  </div> */}
     </div>
   )
 }
