@@ -42,7 +42,7 @@ export default function Contact() {
                 text="Download CV"
                 href="https://www.overleaf.com/read/ggjzkxhgfgsf#f0cabe"
               />
-              <div className="block md:hidden mx-auto">
+              <div className="block md:hidden mx-auto px-2">
                 <LoveButton />
               </div>
             </div>
