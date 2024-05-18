@@ -5,7 +5,7 @@ import { TypewriterEffectSmooth } from "./ui/type-writer-effect";
 export function Main() {
   const title = [
     {
-      text: "Frontend",
+      text: "FullStack",
       className: "text-blue-500 dark:text-blue-500",
     },
     {
@@ -36,7 +36,7 @@ export function Main() {
         </h1>
         <TypewriterEffectSmooth
           words={title}
-          className="absolute md:mt-60 mt-32"
+          className="absolute md:mt-60 mt-32 text-[#0C8DC8]"
         ></TypewriterEffectSmooth>
       </div>
       <div className="absolute  top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
