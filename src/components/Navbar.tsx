@@ -1,5 +1,6 @@
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link } from "@nextui-org/react";
 import LoveButton from "./LoveButton";
+
 export default function NavbarComponent() {
     return (
         <>
@@ -15,26 +16,29 @@ export default function NavbarComponent() {
                 </NavbarBrand>
                 <NavbarContent className="hidden sm:flex gap-8" justify="center">
                     <NavbarItem>
-                        <Link color="foreground" href="#projects">
+                        <Link color="foreground" href="/#projects">
                             Portfolio
                         </Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link color="foreground" href="#about">
+                        <Link color="foreground" href="/#about">
                             About
                         </Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link color="foreground" href="#contact">
+                        <Link color="foreground" href="/#contact">
                             Contact
                         </Link>
+                    </NavbarItem>
+                    <NavbarItem>
+                        <Link href="/Blog">Blog</Link>
                     </NavbarItem>
                 </NavbarContent>
                 <NavbarContent className="w-full flex justify-between" justify="end">
                     <NavbarItem>
-                    <LoveButton />
+                        <LoveButton />
                     </NavbarItem>
-                </NavbarContent>
+                </NavbarContent >
             </Navbar>
         </>
     );
