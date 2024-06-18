@@ -6,7 +6,31 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
+
 model LoveButton {
-  id       String   @id @default(auto()) @map("_id") @db.ObjectId
-  count    Int    @default(0)
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  count Int    @default(0)
+}
+
+model Blog {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  content   String
+  isPublic  Boolean   @default(true)
+  createdAt DateTime  @default(now())
+  likes     Int       @default(0)
+  tags      BlogTag[]
+}
+
+model Tag {
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  name     String    @unique
+  blogTags BlogTag[]
+}
+
+model BlogTag {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  blogId String @db.ObjectId
+  tagId  String @db.ObjectId
+  blog   Blog   @relation(fields: [blogId], references: [id])
+  tag    Tag    @relation(fields: [tagId], references: [id])
 }
