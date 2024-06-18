@@ -1,15 +1,52 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Button, Input, Switch } from "@nextui-org/react";
+import { useRouter, useSearchParams } from 'next/navigation'
+import { createBlogPostWithTags ,updateBlogPostWithTags, getBlogPost } from '@/lib/actions';
 
 function MarkdownEditor() {
   const [md, setMd] = useState('');
   const [tagInput, setTagInput] = useState('');
   const [tags, setTags] = useState<string[]>([]);
   const [isPublic, setIsPublic] = useState(true);
+  const router = useRouter();
+  const searchParams = useSearchParams()
+  const id = searchParams.get('id');
 
+  useEffect(() => {
+    const fetchBlogData = async (blogId: string) => {
+      try {
+        const blog = await getBlogPost(blogId);
+        if (blog) {
+          setMd(blog.content);
+          setTags(blog.tags.map((tag: { tag: { name: string } }) => tag.tag.name));
+          setIsPublic(blog.isPublic);
+        }
+        // Set other state as needed, e.g., isPublic if it's part of the blog model
+      } catch (error) {
+        console.error("Error fetching blog data:", error);
+      }
+    };
+    if (id) {
+      fetchBlogData(id);
+    }
+  }, [id]);
 
+  const createBlog = async () => {
+    try {
+      if (id) {
+        await updateBlogPostWithTags(id, md, tags, isPublic);
+        console.log("Created blog post");
+      } else {
+        await createBlogPostWithTags(md, tags, isPublic);
+        console.log("Updated blog post");
+      }
+      router.push('/blog');
+    } catch (error) {
+      console.error("Error creating blog post:", error);
+    }
+  }
   const handleAddTag = () => {
     if (tagInput.trim() && !tags.includes(tagInput.trim())) {
       setTags([...tags, tagInput.trim()]);
@@ -21,12 +58,6 @@ function MarkdownEditor() {
     setTags(tags.filter(tag => tag !== tagToRemove));
   };
 
-  const handleKeyDown = (e: { key: string; preventDefault: () => void; }) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      handleAddTag();
-    }
-  };
 
   return (
     <div className='flex flex-col w-full h-full p-4 '>
@@ -64,7 +95,6 @@ function MarkdownEditor() {
               placeholder="Add a tag and press Enter"
               value={tagInput}
               onChange={(e) => setTagInput(e.target.value)}
-              onKeyDown={handleKeyDown}
             />
             <Button
               color='primary'
@@ -80,7 +110,9 @@ function MarkdownEditor() {
 
           </div>
           <div>
-            <Button color='success' size='lg'>Publish</Button>
+            <Button color='success' size='lg' onClick={createBlog}>
+              Publish
+            </Button>
           </div>
         </div>
         <div className="flex flex-wrap mt-4">
