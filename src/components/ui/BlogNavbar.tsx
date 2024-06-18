@@ -14,7 +14,7 @@ export const BlogNavbar = ({ userData }: { userData: any }) => {
   ];
 
   return (
-    <NextUINavbar onMenuOpenChange={setIsMenuOpen}>
+    <NextUINavbar onMenuOpenChange={setIsMenuOpen} >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -44,6 +44,11 @@ export const BlogNavbar = ({ userData }: { userData: any }) => {
         <NavbarItem>
           <Link color="foreground" href="/#contact">
             Contact
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="/blog">
+            My Blog
           </Link>
         </NavbarItem>
       </NavbarContent>
