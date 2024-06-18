@@ -31,7 +31,7 @@ export default function NavbarComponent() {
                         </Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link href="/Blog">Blog</Link>
+                        <Link color="foreground" href="/blog">Blog</Link>
                     </NavbarItem>
                 </NavbarContent>
                 <NavbarContent className="w-full flex justify-between" justify="end">
