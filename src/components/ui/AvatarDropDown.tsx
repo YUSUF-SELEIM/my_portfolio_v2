@@ -28,7 +28,7 @@ function AvatarDropDown({ userData }: { userData: userData }) {
                 </DropdownItem>
                 {userData?.email === "yusufabdelfattah207@gmail.com" ? (
                     <DropdownItem key="blog" color="success">
-                        <Link href="/Blog/Editor" >Create a Blog</Link>
+                        <Link href="/blog/editor" >Create a Blog</Link>
                     </DropdownItem>
                 ) : (
                     <DropdownItem key="disable">
