@@ -166,3 +166,23 @@ export const getTagName = async (tagId: string) => {
   });
   return tag?.name;
 } 
+
+export const addComment = async (blogId: string, userEmail: string, content: string) => {
+  return await prisma.comment.create({
+    data: {
+      content,
+      blog: {
+        connect: { id: blogId }
+      },
+      userEmail
+    }
+  });
+};
+
+export const getCommentsByBlogId = async (blogId: string) => {
+  return await prisma.comment.findMany({
+    where: {
+      blogId,
+    },
+  });
+};
