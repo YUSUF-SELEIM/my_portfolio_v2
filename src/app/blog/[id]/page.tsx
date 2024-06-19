@@ -3,6 +3,7 @@ import { getBlogPost } from '@/lib/actions';
 import { BlogNavbar } from '@/src/components/ui/BlogNavbar';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import BlogPageActions from '@/src/components/BlogPageActions';
+import Comments from '@/src/components/comments';
 
 async function BlogPage({ params }: { params: { id: string } }) {
   const { getUser } = getKindeServerSession();
@@ -63,9 +64,10 @@ async function BlogPage({ params }: { params: { id: string } }) {
             </span>
           ))}
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 mb-6">
           <BlogPageActions blogId={blog.id} blogLikes={blog.likes}></BlogPageActions>
         </div>
+        <Comments blogId={blog.id} user={user} />
       </div>
     </>
   );
