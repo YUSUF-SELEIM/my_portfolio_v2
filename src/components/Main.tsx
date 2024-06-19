@@ -1,6 +1,9 @@
 "use client";
+import Link from "next/link";
 import { SparklesCore } from "./ui/sparkles";
 import { TypewriterEffectSmooth } from "./ui/type-writer-effect";
+import { Chip } from "@nextui-org/react";
+import { FaCircle } from "react-icons/fa";
 
 export function Main() {
   const title = [
@@ -43,6 +46,11 @@ export function Main() {
       <div className="absolute  top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
       <div className="absolute  bottom-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
       <div className="absolute  bottom-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+      <Chip className="md:hidden absolute top-0 mx-auto my-4" color="warning" variant="faded" startContent={<FaCircle className="animate-pulse" />}>
+        <Link className="underline ml-2" href="/blog">
+          Check out My Blog
+        </Link>
+      </Chip>
     </div>
   );
 }
