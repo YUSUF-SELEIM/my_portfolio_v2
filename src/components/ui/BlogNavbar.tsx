@@ -3,15 +3,8 @@ import { Navbar as NextUINavbar, NavbarBrand, NavbarContent, NavbarItem, Link, D
 import AvatarDropDown from "./AvatarDropDown";
 import { useState } from "react";
 
-
 export const BlogNavbar = ({ userData }: { userData: any }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const menuItems = [
-    "Portfolio",
-    "About",
-    "Contact",
-  ];
 
   return (
     <NextUINavbar onMenuOpenChange={setIsMenuOpen} >
@@ -58,20 +51,46 @@ export const BlogNavbar = ({ userData }: { userData: any }) => {
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              color={
-                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-              }
-              className="w-full"
-              href="#"
-              size="lg"
-            >
-              {item}
-            </Link>
-          </NavbarMenuItem>
-        ))}
+        <NavbarMenuItem >
+          <Link
+            color="foreground"
+            className="w-full"
+            href="/#projects"
+            size="lg"
+          >
+            Projects
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem >
+          <Link
+            color="foreground"
+            className="w-full"
+            href="/#about"
+            size="lg"
+          >
+            About
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem >
+          <Link
+            color="foreground"
+            className="w-full"
+            href="/#contact"
+            size="lg"
+          >
+            Contact
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem >
+          <Link
+            color="foreground"
+            className="w-full"
+            href="/blog"
+            size="lg"
+          >
+            My Blog
+          </Link>
+        </NavbarMenuItem>
       </NavbarMenu>
     </NextUINavbar>
   );
