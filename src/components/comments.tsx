@@ -1,12 +1,12 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { getCommentsByBlogId } from '@/lib/actions'; // Ensure these functions are available
+import { getCommentsByBlogId, addComment } from '@/lib/actions'; // Ensure these functions are available
 import { Button, Textarea } from '@nextui-org/react';
 
 interface Comment {
     id: string;
     content: string;
-    createdAt: Date;
+    createdAt: string;
     userEmail: string;
 }
 
@@ -18,7 +18,10 @@ function Comments({ blogId, user }: { blogId: string, user: any }) {
         const fetchComments = async () => {
             try {
                 const commentsData = await getCommentsByBlogId(blogId);
-                setComments(commentsData);
+                setComments(commentsData.map((comment: any) => ({
+                    ...comment,
+                    createdAt: new Date(comment.createdAt).toISOString()
+                })));
             } catch (error) {
                 console.error('Error fetching comments:', error);
             }
@@ -30,13 +33,11 @@ function Comments({ blogId, user }: { blogId: string, user: any }) {
     const handleAddComment = async () => {
         try {
             if (user) {
-                const newComment: Comment = {
-                    id: '',
-                    content: commentContent,
-                    createdAt: new Date(),
-                    userEmail: user.email,
-                };
-                setComments([...comments, newComment]);
+                const newComment = await addComment(blogId, user.email, commentContent);
+                setComments([...comments, {
+                    ...newComment,
+                    createdAt: new Date(newComment.createdAt).toISOString()
+                }]);
                 setCommentContent('');
             }
         } catch (error) {
@@ -59,7 +60,7 @@ function Comments({ blogId, user }: { blogId: string, user: any }) {
                 {comments.map((comment) => (
                     <div key={comment.id} className="mb-4 border-b border-gray-700 pb-2">
                         <p className="text-sm text-gray-300">{comment.content}</p>
-                        <p className="text-xs text-gray-500">{comment.userEmail} on {formatDate(comment.createdAt.toString())}</p>
+                        <p className="text-xs text-gray-500">{comment.userEmail} on {formatDate(comment.createdAt)}</p>
                     </div>
                 ))}
             </div>
