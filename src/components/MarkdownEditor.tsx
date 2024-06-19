@@ -77,8 +77,11 @@ function MarkdownEditor() {
               p: ({ node, ...props }) => <p className="text-base" {...props} />,
               code: ({ node, ...props }) => (
                 <div className="flex justify-center my-4">
-                  <pre className="text-base bg-gray-900 p-4 rounded-md w-fit" {...props} />
+                  <pre className="text-base bg-gray-900 p-4 rounded-md w-fit overflow-x-auto" {...props} />
                 </div>
+              ),
+              a: ({ node, ...props }) => (
+                <a className="text-blue-500 hover:underline" {...props} />
               ),
             }}
           >
