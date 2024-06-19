@@ -23,7 +23,6 @@ function MarkdownEditor() {
           setTags(blog.tags.map((tag: { tag: { name: string } }) => tag.tag.name));
           setIsPublic(blog.isPublic);
         }
-        // Set other state as needed, e.g., isPublic if it's part of the blog model
       } catch (error) {
         console.error("Error fetching blog data:", error);
       }
