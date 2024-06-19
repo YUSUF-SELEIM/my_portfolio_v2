@@ -28,9 +28,10 @@ function BlogPostController({ blog, userEmail }: { blog: Blog, userEmail: string
   const goToBlogPage = () => {
     router.push(`/blog/${blog.id}`);
   };
+
   return (
     <div className="md:w-2/5 w-full flex flex-col mt-4 md:mt-0">
-      <div className="flex flex-wrap justify-center md:justify-end">
+      <div className="flex flex-wrap justify-center md:justify-end gap-1">
         {blog.tags.map((tag: { tag: { id: string; name: string } }) => (
           <Chip key={tag.tag.id}>
             {tag.tag.name}
