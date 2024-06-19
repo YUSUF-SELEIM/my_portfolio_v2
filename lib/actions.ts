@@ -136,3 +136,33 @@ export const likeBlogPost = async (blogId: string) => {
     throw error;
   }
 }
+
+export const getTags = async () => {
+  return await prisma.tag.findMany();
+}
+
+export const filterByTag = async (tagId: string) => {
+  return await prisma.blog.findMany({
+    where: {
+      tags: {
+        some: {
+          tagId: tagId,
+        },
+      },
+    },
+    include: {
+      tags: {
+        include: {
+          tag: true,
+        },
+      },
+    },
+  });
+};
+
+export const getTagName = async (tagId: string) => {
+  const tag = await prisma.tag.findUnique({
+    where: { id: tagId },
+  });
+  return tag?.name;
+} 
