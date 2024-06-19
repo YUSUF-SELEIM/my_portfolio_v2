@@ -150,6 +150,7 @@ export const getTags = async () => {
 export const filterByTag = async (tagId: string) => {
   return await prisma.blog.findMany({
     where: {
+      isPublic:true,
       tags: {
         some: {
           tagId: tagId,
