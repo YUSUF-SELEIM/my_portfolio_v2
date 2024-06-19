@@ -93,6 +93,12 @@ export const updateBlogPostWithTags = async (id: string, content: string, tagNam
 };
 export const getBlogPostsWithTags = async () => {
   return await prisma.blog.findMany({
+    where: {
+      isPublic: true,
+    },
+    orderBy: {
+      createdAt: 'desc',
+    },
     include: {
       tags: {
         include: {
@@ -101,7 +107,7 @@ export const getBlogPostsWithTags = async () => {
       },
     },
   });
-}
+};
 export const getBlogPost = async (id: string) => {
   return await prisma.blog.findUnique({
     where: { id },
