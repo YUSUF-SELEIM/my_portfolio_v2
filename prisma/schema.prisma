@@ -19,6 +19,7 @@ model Blog {
   createdAt DateTime  @default(now())
   likes     Int       @default(0)
   tags      BlogTag[]
+  comments  Comment[]
 }
 
 model Tag {
@@ -33,4 +34,13 @@ model BlogTag {
   tagId  String @db.ObjectId
   blog   Blog   @relation(fields: [blogId], references: [id])
   tag    Tag    @relation(fields: [tagId], references: [id])
+}
+
+model Comment {
+  id        String   @id @default(cuid()) @map("_id")
+  content   String
+  createdAt DateTime @default(now())
+  blog      Blog     @relation(fields: [blogId], references: [id])
+  blogId    String   @db.ObjectId
+  userEmail String
 }
