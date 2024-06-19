@@ -1,8 +1,9 @@
 'use client';
 import { Button, Chip } from '@nextui-org/react';
-import { FaArrowAltCircleRight, FaEdit, FaTrash } from 'react-icons/fa';
+import { FaEdit, FaTrash } from 'react-icons/fa';
 import { deleteBlogPost } from '@/lib/actions';
 import { useRouter } from 'next/navigation'
+import { FaArrowRightLong } from 'react-icons/fa6';
 
 interface Blog {
   id: string;
@@ -50,8 +51,8 @@ function BlogPostController({ blog, userEmail }: { blog: Blog, userEmail: string
       )}
       <div className="flex justify-end items-center mt-12 space-x-4">
         <span className="text-gray-400 text-xs">{blog.likes} Likes</span>
-        <Button isIconOnly color="default" onClick={goToBlogPage}>
-          <FaArrowAltCircleRight />
+        <Button isIconOnly color="primary" onClick={goToBlogPage} className='hover:scale-110' variant='light'>
+          <FaArrowRightLong />
         </Button>
       </div>
     </div>
