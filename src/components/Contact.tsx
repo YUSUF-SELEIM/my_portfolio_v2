@@ -10,7 +10,7 @@ export default function Contact() {
         backgroundColor="black"
         rangeY={800}
         particleCount={500}
-        baseHue={120}
+        baseHue={1000}
         className="flex flex-col"
       >
           <TypewriterEffectSmooth
